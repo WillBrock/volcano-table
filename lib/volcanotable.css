@@ -22,10 +22,9 @@
 }
 
 .volcanotable .volcanotable-delete {
-	padding     : 0 5px;
-	font-size   : 25px;
-	font-weight : bold;
-	color       : red;
+	background-image  : url("img/delete.png");
+	background-repeat : no-repeat;
+	vertical-align    : middle;
 }
 
 .volcanotable .volcanotable-delete:hover,
@@ -79,6 +78,14 @@
 	margin-right : 10px;
 }
 /* End Pagination */
+
+.volcanotable-export-icon {
+	display           : inline-block;
+	background-image  : url("img/excel.png");
+	background-repeat : no-repeat;
+	width             : 35px;
+	height            : 35px;
+}
 
 .volcanotable .volcanotable-add-record-container {
 	padding : 20px 15%;

@@ -1,7 +1,7 @@
 Package.describe({
   name: 'willbrock:volcano-table',
-  summary: ' /* Fill me in! */ ',
-  version: '1.0.0',
+  summary: 'Volcano Table - an editable datatable for Meteor',
+  version: '0.0.1',
   git: ' /* Fill me in! */ '
 });
 
@@ -15,4 +15,6 @@ Package.onUse(function(api) {
   api.addFiles('lib/volcanotable.html', 'client');
   api.addFiles('lib/volcanotable.js', 'client');
   api.addFiles('lib/volcanotable.css', 'client');
+  api.addFiles('lib/img/delete.png', 'client');
+  api.addFiles('lib/img/excel.png', 'client');
 });
