@@ -12,9 +12,25 @@ An editable datatable package for Meteor.
  * Pagination
  * Sorting
 
+##Example
+
+http://volcanotable.meteor.com
+
 ##Usage
 
-To use Volcano Table just include the `volcanoTable` template inside of an existing template.
+To use Volcano Table just include the `volcanoTable` template inside of an existing template. The only attribute that is
+required when including the `volcanoTable` template is `settings`.
+
+```javascript
+<template name="volcanotable_example">
+
+	{{> volcanoTable settings=example_settings}}
+
+</template>
+```
+
+Additionally you can specify other attributes that will apply to the table. The additional attributes can also be spceified
+in the template helper instead of when calling `volcanoTable`.
 
 ```javascript
 <template name="volcanotable_example">
@@ -29,26 +45,12 @@ when including the Volcano Table template.
 
 ```javascript
 Template.volcanotable_example.helpers({
+
+	// We called example_settings when calling the volcanoTable template
 	example_settings : function() {
 
-		var industries = [
-			'Retail',
-			'Sales',
-			'Software',
-			'Construction',
-			'Engineering',
-			'Publishing',
-			'Media',
-			'Hospitality'
-		];
-
-		var industry_options = {};
-		for(var i = 0; i < industries.length; i++) {
-			var industry = industries[i];
-			industry_options[industry] = industry;
-		}
-
 		return {
+
 			// This lets us know what collection to use when updating, deleting, inserting records
 			collection : Clients,
 
@@ -58,23 +60,26 @@ Template.volcanotable_example.helpers({
 
 			fields : [
 				{
+					// Defines the field in the collection
 					key      : 'name',
+
+					// Displays in the header of the table
 					label    : 'Client Name',
+
+					// Specifies that this field will be editable with an input of type text
 					input    : 'text',
-					required : true,
-					filter   : true,
+
+					// Specify additional attributes for this field
 					input_attributes : {
 						'class'        : 'name_class',
 						'data-example' : 'yes'
 					}
-				},
-				{
-					key            : 'industry',
-					label          : 'Industry',
-					input          : 'select',
-					fiter          : true,
-					select_options : industry_options,
-					empty_option   : true,
+
+					// Indicates that this is a required field
+					required : true,
+
+					// When filtering, lets us know we can filter on this field
+					filter   : true
 				},
 				{
 					key    : 'location',
@@ -86,11 +91,6 @@ Template.volcanotable_example.helpers({
 					key    : 'phone',
 					label  : 'Phone',
 					input  : 'text',
-					filter : true
-				},
-				{
-					key    : 'founded',
-					label  : 'Founded',
 					filter : true
 				},
 				{
@@ -108,3 +108,33 @@ Template.volcanotable_example.helpers({
 	}
 });
 ```
+
+##Fields
+
+Fields are where everything is setup for all the individual fields in the table.
+
+```javascript
+
+fields : [
+	{
+		key      : 'name',
+		label    : 'Client Name',
+		input    : 'text',
+		input_attributes : {
+			'class'        : 'name_class',
+			'data-example' : 'yes'
+		}
+		required : true,
+		filter   : true
+	}
+```
+
+There are only two options that are required, `key` and `label`. `key` specifies the document in the collection and
+`label` specifies the title to be displayed in the table header.
+
+Below is a list of all the available options for fields:
+ * ley : Defines the field in the collection.
+ * label : Displays in the header of the table
+ * input : Specifies that the field will be editable with an input. `text`, `select`, `checkbox`, `textarea`
+ * required :
+ * fn :
