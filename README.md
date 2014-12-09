@@ -7,7 +7,6 @@ An editable datatable package for Meteor.
  * Add New Records
  * Delete Records
  * Data Verification
- * Export to CSV
  * Filtering
  * Pagination
  * Sorting
@@ -15,6 +14,10 @@ An editable datatable package for Meteor.
 ##Example
 
 http://volcanotable.meteor.com
+
+##Todo
+
+ * Fetch data from the server to allow for larger datasets.
 
 ##Usage
 
@@ -35,7 +38,7 @@ in the template helper instead of when calling `volcanoTable`.
 ```javascript
 <template name="volcanotable_example">
 
-	{{> volcanoTable settings=example_settings class="example-table-class" export=true addRecord=true deleteRecord=true pagination=15 sortField="name"}}
+	{{> volcanoTable settings=example_settings class="example-table-class" addRecord=true deleteRecord=true pagination=15 sortField="name"}}
 
 </template>
 ```
@@ -114,7 +117,6 @@ Template.volcanotable_example.helpers({
 Fields are where everything is setup for all the individual fields in the table.
 
 ```javascript
-
 fields : [
 	{
 		key      : 'name',
@@ -133,8 +135,9 @@ There are only two options that are required, `key` and `label`. `key` specifies
 `label` specifies the title to be displayed in the table header.
 
 Below is a list of all the available options for fields:
- * ley : Defines the field in the collection.
- * label : Displays in the header of the table
+ * key : Defines the field in the collection.
+ * label : Displays in the header of the table.
  * input : Specifies that the field will be editable with an input. `text`, `select`, `checkbox`, `textarea`
- * required :
- * fn :
+ * required : Specifies that the field is required.
+ * fn : Defines a function. The first parameter is the current value of the `key` and the second parameter is the current record.
+ * input_attributes : Object of different attributes to apply to an input.
