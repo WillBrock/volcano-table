@@ -141,3 +141,8 @@ Below is a list of all the available options for fields:
  * required : Specifies that the field is required.
  * fn : Defines a function. The first parameter is the current value of the `key` and the second parameter is the current record.
  * input_attributes : Object of different attributes to apply to an input.
+
+##Styling
+
+Very minimal styling is done on the table which is intended. Styling can easily be done with Bootstrap or Semantic. There is also default
+styling that can be used which is located in the generic_table.css file.
