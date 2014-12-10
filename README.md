@@ -79,6 +79,7 @@ Template.volcanotable_example.helpers({
 					}
 
 					// Indicates that this is a required field
+					// when inserting or updating the field
 					required : true,
 
 					// When filtering, lets us know we can filter on this field
@@ -150,4 +151,4 @@ Below is a list of all the available options for fields:
 ##Styling
 
 Very minimal styling is done on the table which is intended. Styling can easily be done with Bootstrap or Semantic. There is also default
-styling that can be used which is located in the generic_table.css file.
+styling included that can be used which is located in the generic_table.css file.
