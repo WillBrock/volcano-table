@@ -100,7 +100,12 @@ Template.volcanotable_example.helpers({
 					key    : 'annual_sales',
 					label  : 'Annual Sales',
 					fn     : function(value, record) {
-						var parts = record.annual_sales.toString().split(".");
+						var sales = record.annual_sales;
+						if(!sales) {
+							return;
+						}
+
+						var parts = sales.toString().split(".");
 						parts[0]  = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 						return parts.join(".");
