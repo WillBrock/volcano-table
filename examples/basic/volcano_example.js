@@ -39,7 +39,7 @@ if(Meteor.isClient) {
 						key            : 'industry',
 						label          : 'Industry',
 						input          : 'select',
-						fiter          : true,
+						filter         : true,
 						select_options : industry_options,
 						empty_option   : true,
 					},
