@@ -12,9 +12,16 @@ Package.onUse(function(api) {
   api.use('underscore', 'client');
   api.use('reactive-var@1.0.3');
 
+  api.addFiles('lib/volcanotable.js', ['client', 'server']);
+
   api.addFiles('lib/volcanotable.html', 'client');
-  api.addFiles('lib/volcanotable.js', 'client');
+  api.addFiles('lib/volcanotable_client.js', 'client');
   api.addFiles('lib/volcanotable.css', 'client');
   api.addFiles('lib/img/delete.png', 'client');
   api.addFiles('lib/img/excel.png', 'client');
+
+  api.addFiles('lib/volcanotable_server.js', 'server');
+
+  api.export('VolcanoTableCount',['server', 'client']);
+
 });
