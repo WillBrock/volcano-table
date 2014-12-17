@@ -1,0 +1,20 @@
+<head>
+  <title>datatable_example</title>
+</head>
+
+<body>
+	<div class="page-container">
+		<div class="top-container">
+			<h2>Testing Package Volcano Table</h2>
+			<p>An editable datatable for Meteor. View on <a href="https://github.com/WillBrock/volcano-table">GitHub</a>.</p>
+		</div>
+
+		{{> volcanotable_example}}
+	</div>
+</body>
+
+<template name="volcanotable_example">
+
+	{{> volcanoTable settings=settings class="example-table-class" export=true addRecord=true deleteRecord=true pagination=10 sortField="name"}}
+
+</template>

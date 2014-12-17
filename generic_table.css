@@ -1,0 +1,68 @@
+/* Default styles */
+.volcanotable .volcanotable-ui-button {
+	padding          : 6px 9px;
+	background-color : #FAFAFA;
+	color            : #808080;
+	font-weight      : 700;
+	text-align       : center;
+	cursor           : pointer;
+	text-transform   : uppercase;
+	border           : 1px solid #E0E0E0;
+	border-radius    : 2px;
+}
+
+/* Pagination */
+.volcanotable-pagination-container {
+	color : #808080;
+}
+
+.volcanotable-current-page {
+	color : #808080;
+}
+/* End Pagination */
+
+/* Main table styles */
+.volcanotable-table {
+	border-collapse : collapse;;
+	width           : 100%;
+	border-radius   : 5px;
+	border          : 1px solid #E0E0E0;
+}
+
+.volcanotable-table thead {
+	border-bottom : 1px solid rgba(0,0,0,.03)
+}
+
+.volcanotable-table thead tr {
+	background-color : rgba(0,0,0,.05);
+}
+
+.volcanotable-table thead th {
+	padding        : 7px;
+	text-align     : left;
+	color          : rgba(0,0,0,.8);
+	vertical-align : middle;
+}
+
+.volcanotable-table thead th:first-child {
+	border-top-left-radius : 5px;
+}
+
+.volcanotable-table thead th:last-child {
+	border-top-right-radius : 5px;
+}
+
+.volcanotable-table tbody tr:nth-child(even) {
+	background-color : rgba(0,0,50,.02);
+}
+
+.volcanotable-table tbody td {
+	padding        : 3px 8px;
+	vertical-align : middle;
+}
+
+.volcanotable-table input {
+	padding : 3px;
+	width   : 100%;
+}
+/* End maing table styles */

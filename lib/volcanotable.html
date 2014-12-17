@@ -1,0 +1,92 @@
+<template name="volcanoTable">
+
+	{{initalize}}
+
+	<div class="volcanotable">
+		<div class="volcanotable-top-container">
+			{{#if addRecord}}
+				<button class="volcanotable-ui-button volcanotable-add-record-button" data-modal-id="{{id}}">Add Record</button>
+			{{/if}}
+
+			{{#if pagination}}
+				<span class="volcanotable-pagination-container">
+					<span class="volcanotable-pagination-description">
+						Page
+						<input type="text" class="volcanotable-current-page volcanotable-ui-input" value="{{getCurrentPage}}">
+						of {{getTotalPages}}
+					</span>
+					<button class="volcanotable-previous-page volcanotable-pagination-direction volcanotable-ui-button">Previous</button>
+					<button class="volcanotable-next-page volcanotable-pagination-direction volcanotable-ui-button">Next</button>
+				</span>
+			{{/if}}
+
+			{{#if displayFilter}}
+				<div class="volcanotable-filter-container">
+					<input type="text" class="volcanotable-ui-input volcanotable-filter" placeholder="Filter">
+				</div>
+			{{/if}}
+		</div>
+
+		{{#if records.count}}
+			<table id="volcanotable-{{id}}" class="volcanotable-table {{class}}">
+				<thead>
+					<tr>
+						{{#if deleteRecord}}
+							<th class="shrink"></th>
+						{{/if}}
+
+						{{#each fields}}
+							<th data-key="{{key}}">{{getLabel}} {{#if ascending}} &#x25BC; {{else}}&#x25B2;{{/if}}</th>
+						{{/each}}
+					</tr>
+				</thead>
+				<tbody>
+					{{#each records}}
+						<tr data-record="{{_id}}">
+							{{#if ../deleteRecord}}
+								<td><div class="volcanotable-delete">&nbsp;</div></td>
+							{{/if}}
+
+							{{#each ../fields}}
+								<td>{{{getData ..}}}</td>
+							{{/each}}
+						</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		{{else}}
+			<div class="volcanotable-no-records">No records found</div>
+		{{/if}}
+
+		{{#if addRecord}}
+			<div class="volcanotable-modal" id="volcanotable-modal-id-{{id}}" data-modal-id="{{id}}" role="dialog">
+				<div class="volcanotable-modal-content">
+					<div class="volcanotable-modal-close">X</div>
+					<div class="volcanotable-modal-header">
+						<h2>Add New Record</h2>
+					</div>
+
+					<div class="volcanotable-modal-body volcanotable-fields-container">
+						<div class="volcanotable-add-errors"></div>
+						{{#each fields}}
+							{{#if input}}
+								<div class="volcanotable-add-record-container">
+									<label class="volcanotable-add-label">{{label}}</label>
+
+									<div class="volcanotable-add-input-container">
+										{{{setInput ..}}}
+									</div>
+								</div>
+							{{/if}}
+						{{/each}}
+					</div>
+
+					<div class="volcanotable-modal-footer">
+						<button type="button" class="volcanotable-ui-button volcanotable-create-record">Create Record</button>
+						<div class="volcanotable-clear"></div>
+					</div>
+				</div>
+			</div>
+		{{/if}}
+	</div>
+</template>
