@@ -1,9 +1,5 @@
 Package.describe({
-<<<<<<< HEAD
   name: 'wilbur:volcano-table',
-=======
-  name: 'willbrock:volcano-table',
->>>>>>> 1f7583852e236208f7b83596219b41a565e57003
   summary: 'Volcano Table - an editable datatable for Meteor',
   version: '0.0.1',
   git: 'https://github.com/WillBrock/volcano-table'
