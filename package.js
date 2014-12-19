@@ -20,7 +20,7 @@ Package.onUse(function(api) {
   api.addFiles('lib/img/delete.png', 'client');
   api.addFiles('lib/img/excel.png', 'client');
 
-  api.addFiles('lib/volcanotable_server.js', ['server', 'client']);
+  api.addFiles('lib/volcanotable_server.js', 'server');
 
   api.export('VolcanoTable','server');
 
