@@ -3,6 +3,8 @@
 An editable datatable package for Meteor.
 
 ##Features
+ * Only downloads the data to the client that it needs
+ * Suitable for large datasets
  * Edit Existing Records
  * Add New Records
  * Delete Records
@@ -13,11 +15,7 @@ An editable datatable package for Meteor.
 
 ##Example
 
-http://volcanotable.meteor.com
-
-##Todo
-
- * Fetch data from the server to allow for larger datasets.
+http://volcano.meteor.com
 
 ##Usage
 
@@ -43,7 +41,18 @@ in the template helper instead of when calling `volcanoTable`.
 </template>
 ```
 
-Next we need to add our table `settings` inside the template helper. We defined our settings helper as `example_settings`
+Next we need to let the server know what data we want it to return. The is how we securley return records from the Meteor.publish.
+This is where we will need to specify the collection, template and our where clause.
+
+```javascript
+if(Meteor.isServer) {
+	VolcanoTable(Collection, 'volcanotable_example', {
+		location : { $in : ['Orlando', 'Tampa', 'Dallas'] }
+	});
+}
+```
+
+Now we need to add our table `settings` inside the template helper. We defined our settings helper as `example_settings`
 when including the Volcano Table template.
 
 ```javascript
@@ -54,12 +63,13 @@ Template.volcanotable_example.helpers({
 
 		return {
 
-			// This lets us know what collection to use when updating, deleting, inserting records
+			// The collection that the data is coming from
 			collection : Clients,
 
-			// The records to output into the table
-			// Records can be in the format of a Collection, Cursor, Array
-			table_data : Clients.find({}),
+			// Additionally, 'where' can be used here as well and will filter out results that are already published
+			where : {
+				location : 'Tampa'
+			},
 
 			fields : [
 				{
