@@ -3,8 +3,8 @@
 An editable datatable package for Meteor.
 
 ##Features
- * Only downloads the data to the client that it needs
- * Suitable for large datasets
+ * Only downloads data to the client as it's needed
+ * Suitable for very large datasets
  * Edit Existing Records
  * Add New Records
  * Delete Records
