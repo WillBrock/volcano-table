@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'willbrock:volcano-table',
+  name: 'wilbur:volcano-table',
   summary: 'Volcano Table - an editable datatable for Meteor',
   version: '0.0.1',
   git: 'https://github.com/WillBrock/volcano-table'
@@ -22,6 +22,6 @@ Package.onUse(function(api) {
 
   api.addFiles('lib/volcanotable_server.js', ['server', 'client']);
 
-  api.export('VolcanoTable',['server', 'client']);
+  api.export('VolcanoTable','server');
 
 });
