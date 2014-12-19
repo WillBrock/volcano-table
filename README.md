@@ -17,6 +17,12 @@ An editable datatable package for Meteor.
 
 http://volcano.meteor.com
 
+## Installation
+
+```bash
+meteor add wilbur:volcano-table
+```
+
 ##Usage
 
 To use Volcano Table just include the `volcanoTable` template inside of an existing template. The only attribute that is
