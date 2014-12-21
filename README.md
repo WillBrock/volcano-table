@@ -47,6 +47,15 @@ in the template helper instead of when calling `volcanoTable`.
 </template>
 ```
 
+#Available Options
+
+ * `settings`     : Spceify the helper where the table settings will reside.
+ * `class`        : Adds aditional classes to the table.
+ * `addRecord`    : Allow adding a new record to the table.
+ * `deleteRecord` : Allow deleting a record from the table.
+ * `pagination`   : Paginate the table.
+ * `sortField`    : Specifies a default sort that will be added to the table, use the `key` from one of the fields.
+
 Next we need to let the server know what data we want it to return. The is how we securley return records from the Meteor.publish.
 This is where we will need to specify the collection, template and our where clause.
 
