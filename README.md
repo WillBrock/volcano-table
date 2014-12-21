@@ -47,7 +47,7 @@ in the template helper instead of when calling `volcanoTable`.
 </template>
 ```
 
-#Available Options
+###Available Options
 
  * `settings`     : Spceify the helper where the table settings will reside.
  * `class`        : Adds aditional classes to the table.
