@@ -166,12 +166,12 @@ There are only two options that are required, `key` and `label`. `key` specifies
 `label` specifies the title to be displayed in the table header.
 
 Below is a list of all the available options for fields:
- * key : Defines the field in the collection.
- * label : Displays in the header of the table.
- * input : Specifies that the field will be editable with an input. `text`, `select`, `checkbox`, `textarea`
- * required : Specifies that the field is required.
- * fn : Defines a function. The first parameter is the current value of the `key` and the second parameter is the current record.
- * input_attributes : Object of different attributes to apply to an input.
+ * `key`              : Defines the field in the collection.
+ * `label`            : Displays in the header of the table.
+ * `input`            : Specifies that the field will be editable with an input. `text`, `select`, `checkbox`, `textarea`
+ * `required`         : Specifies that the field is required.
+ * `fn`               : Defines a function. The first parameter is the current value of the `key` and the second parameter is the current record.
+ * `input_attributes` : Object of different attributes to apply to an input.
 
 ##Styling
 
