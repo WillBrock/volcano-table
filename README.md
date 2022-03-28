@@ -1,8 +1,8 @@
-#Volcano Table
+# Volcano Table
 
 An editable datatable package for Meteor.
 
-##Features
+## Features
  * Only downloads data to the client as it's needed
  * Suitable for very large datasets
  * Edit Existing Records
@@ -13,7 +13,7 @@ An editable datatable package for Meteor.
  * Pagination
  * Sorting
 
-##Example
+## Example
 
 http://volcano.meteor.com
 
@@ -23,7 +23,7 @@ http://volcano.meteor.com
 meteor add wilbur:volcano-table
 ```
 
-##Usage
+## Usage
 
 To use Volcano Table just include the `volcanoTable` template inside of an existing template. The only attribute that is
 required when including the `volcanoTable` template is `settings`.
@@ -47,7 +47,7 @@ in the template helper instead of when calling `volcanoTable`.
 </template>
 ```
 
-###Available Options
+### Available Options
 
  * `settings`     : Spceify the helper where the table settings will reside.
  * `class`        : Adds aditional classes to the table.
@@ -143,7 +143,7 @@ Template.volcanotable_example.helpers({
 });
 ```
 
-##Fields
+## Fields
 
 Fields are where everything is setup for all the individual fields in the table.
 
@@ -173,7 +173,7 @@ Below is a list of all the available options for fields:
  * `fn`               : Defines a function. The first parameter is the current value of the `key` and the second parameter is the current record.
  * `input_attributes` : Object of different attributes to apply to an input.
 
-##Styling
+## Styling
 
 Very minimal styling is done on the table which is intended. Styling can easily be done with Bootstrap or Semantic. There is also default
 styling included that can be used which is located in the generic_table.css file.
