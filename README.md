@@ -30,9 +30,7 @@ required when including the `volcanoTable` template is `settings`.
 
 ```javascript
 <template name="volcanotable_example">
-
 	{{> volcanoTable settings=example_settings}}
-
 </template>
 ```
 
@@ -41,9 +39,7 @@ in the template helper instead of when calling `volcanoTable`.
 
 ```javascript
 <template name="volcanotable_example">
-
 	{{> volcanoTable settings=example_settings class="example-table-class" addRecord=true deleteRecord=true pagination=15 sortField="name"}}
-
 </template>
 ```
 
